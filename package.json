@@ -2,12 +2,21 @@
     "private": true,
     "version": "0.0.0",
     "name": "polymedia-rpcs-monorepo",
+    "author": "@juzybits (https://polymedia.app)",
+    "homepage": "https://rpcs.polymedia.app",
+    "description": "Find the fastest Sui RPC for you",
     "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/juzybits/polymedia-rpcs"
+    },
+    "keywords": [],
     "scripts": {
         "build": "turbo run build",
-        "clean": "turbo run clean && rm -rf dist/ node_modules/ .turbo/",
+        "clean": "turbo run clean && rm -rf dist/ node_modules/ .turbo/ src/sui*/build/ src/sui*/Move.lock src/sui*/.coverage_map.mvcov src/sui*/.trace",
         "dev": "turbo run dev",
-        "lint": "turbo run lint"
+        "lint": "turbo run lint",
+        "typecheck": "turbo run typecheck"
     },
     "devDependencies": {
         "@eslint/compat": "^1.0.3",
@@ -21,5 +30,6 @@
     },
     "engines": {
         "node": ">=18"
-    }
+    },
+    "packageManager": "pnpm@9.8.0"
 }
