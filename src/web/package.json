@@ -22,21 +22,22 @@
         "typecheck": "tsc -b"
     },
     "dependencies": {
-        "@mysten/sui": "^1.0.3",
-        "@polymedia/suitcase-core": "^0.0.6",
-        "@polymedia/suitcase-react": "^0.0.6",
+        "@mysten/sui": "^1.9.0",
+        "@polymedia/suitcase-core": "^0.0.29",
+        "@polymedia/suitcase-react": "^0.0.29",
         "normalize.css": "^8.0.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "react-router-dom": "^6.23.1"
+        "react-router-dom": "^6.26.2"
     },
     "devDependencies": {
-        "@types/react": "^18.3.3",
+        "@types/react": "^18.3.8",
         "@types/react-dom": "^18.3.0",
         "@vitejs/plugin-react-swc": "^3.7.0",
         "less": "^4.2.0",
-        "vite": "^5.2.12",
-        "wrangler": "^3.58.0"
+        "typescript": "^5.6.2",
+        "vite": "^5.4.7",
+        "wrangler": "^3.78.8"
     },
     "type": "module",
     "sideEffects": false
