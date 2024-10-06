@@ -40,7 +40,7 @@ const App: React.FC = () =>
     const Header: React.FC = () =>
     {
         return <header>
-            <LinkExternal html={{ href: "https://polymedia.app" }}>
+            <LinkExternal href="https://polymedia.app">
                 <h1>
                     <img alt="polymedia" src="https://assets.polymedia.app/img/all/logo-nomargin-transparent-512x512.webp" className="logo" />
                 </h1>
@@ -86,10 +86,10 @@ const App: React.FC = () =>
     (
         <footer>
             <div id="icons">
-                <LinkExternal html={{ href: "https://polymedia.app" }}>
+                <LinkExternal href="https://polymedia.app">
                     <img alt="polymedia" src="https://assets.polymedia.app/img/all/logo-nomargin-transparent-512x512.webp" className="icon" />
                 </LinkExternal>
-                <LinkExternal html={{ href: "https://github.com/juzybits/polymedia-rpcs" }}>
+                <LinkExternal href="https://github.com/juzybits/polymedia-rpcs">
                     <GitHubLogo />
                 </LinkExternal>
             </div>

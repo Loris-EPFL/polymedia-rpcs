@@ -166,7 +166,7 @@ export const PageHome: React.FC = () =>
             The NPM package <b><i>@polymedia/suitcase-core</i></b> provides functions to measure RPC latency and instantiate <i>SuiClient</i> using the lowest latency endpoint for each user: <b><i>measureRpcLatency()</i></b> and <b><i>newLowLatencySuiClient()</i></b>.
         </p>
         <p>
-            <LinkExternal html={{ href: "https://github.com/juzybits/polymedia-rpcs" }}>
+            <LinkExternal href="https://github.com/juzybits/polymedia-rpcs">
                 Read the code
             </LinkExternal>
         </p>
