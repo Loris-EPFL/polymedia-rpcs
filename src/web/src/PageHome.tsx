@@ -13,6 +13,7 @@ export const PageHome: React.FC = () =>
     const [ rpcs, setRpcs ] = useState<RpcUrl[]>(
         RPC_ENDPOINTS[network].map(url => ( { url, enabled: true } ))
     );
+    const [ testType, setTestType ] = useState<"multiGetObjects" | "queryTransactionBlocks">("multiGetObjects");
     const [ results, setResults ] = useState<AggregateResult[]>([]);
     const [ isRunning, setIsRunning ] = useState<boolean>(false);
     const [ progress, setProgress ] = useState<number>(0);
@@ -27,7 +28,20 @@ export const PageHome: React.FC = () =>
         const allResults: RpcLatencyResult[][] = [];
         const endpoints = rpcs.filter(rpc => rpc.enabled).map(rpc => rpc.url);
         const rpcRequest = async (client: SuiClient) => {
-            await client.getObject({ id: generateRandomAddress() });
+            if (testType === "multiGetObjects") {
+                await client.multiGetObjects({
+                    ids: Array.from({ length: 20 }, () => generateRandomAddress()),
+                    options: { showContent: true, showType: true, showDisplay: true },
+                });
+            } else if (testType === "queryTransactionBlocks") {
+                const bidderPackageId = "0x7bfe75f51565a2e03e169c85a50c490ee707692a14d5417e2b97740da0d48627";
+                await client.queryTransactionBlocks({
+                    filter: { MoveFunction: {
+                        package: bidderPackageId, module: "auction", function: "admin_creates_auction"
+                    }},
+                    options: { showEffects: true, showObjectChanges: true, showInput: true },
+                });
+            }
         };
 
         // Measure latency multiple times for each endpoint
@@ -119,6 +133,37 @@ export const PageHome: React.FC = () =>
         ))}
         </div>
         </div>
+
+        <p>
+            Select the type of test:
+        </p>
+        <div className="radio-group">
+            <div
+                className="radio-option"
+                onClick={() => setTestType("multiGetObjects")}
+            >
+                <input
+                    type="radio"
+                    checked={testType === "multiGetObjects"}
+                    onChange={() => setTestType("multiGetObjects")}
+                />
+                <label>multiGetObjects</label>
+            </div>
+            <div
+                className="radio-option"
+                onClick={() => setTestType("queryTransactionBlocks")}
+            >
+                <input
+                    type="radio"
+                    checked={testType === "queryTransactionBlocks"}
+                    onChange={() => setTestType("queryTransactionBlocks")}
+                />
+                <label>queryTransactionBlocks</label>
+            </div>
+        </div>
+
+        <br/>
+        <br/>
 
         <div id="btnOrProgress">
         {!isRunning

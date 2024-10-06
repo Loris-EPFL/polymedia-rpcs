@@ -12,6 +12,23 @@ header {
     align-items: stretch;
 }
 
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    align-items: center;
+    .radio-option {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        * { cursor: pointer; }
+        &:hover * {
+            text-decoration: underline;
+        }
+    }
+}
+
 #rpc-selector, #results {
     display: flex;
     flex-direction: column;
