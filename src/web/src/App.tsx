@@ -1,5 +1,7 @@
-import { LinkExternal } from "@polymedia/suitcase-react";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+
+import { LinkExternal } from "@polymedia/suitcase-react";
+
 import { PageHome } from "./PageHome";
 import { PageNotFound } from "./PageNotFound";
 import "./styles/.shared.app.less";

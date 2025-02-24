@@ -1,7 +1,8 @@
 import { SuiClient } from "@mysten/sui/client";
+import React, { useState } from "react";
+
 import { RPC_ENDPOINTS, RpcLatencyResult, generateRandomAddress, measureRpcLatency } from "@polymedia/suitcase-core";
 import { LinkExternal } from "@polymedia/suitcase-react";
-import React, { useState } from "react";
 
 export const PageHome: React.FC = () =>
     {
