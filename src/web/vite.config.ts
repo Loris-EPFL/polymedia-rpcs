@@ -12,7 +12,6 @@ export default defineConfig({
         port: 1234,
     },
     server: {
-        host: '0.0.0.0', // Bind to all interfaces
         port: 1234,
       },
     resolve: {
