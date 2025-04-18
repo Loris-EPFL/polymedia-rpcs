@@ -33,5 +33,15 @@
     "engines": {
         "node": ">=18"
     },
-    "packageManager": "pnpm@9.15.5"
+    "packageManager": "pnpm@9.15.5",
+    "dependencies": {
+        "@lavanet/lava-sdk": "^0.33.3",
+        "axios": "^1.8.4",
+        "cors": "^2.8.5",
+        "cors-anywhere": "^0.4.4",
+        "dotenv": "^16.5.0",
+        "express": "^5.1.0",
+        "http-proxy-middleware": "^3.0.5",
+        "vite-plugin-node-polyfills": "^0.23.0"
+    }
 }

@@ -1,8 +1,26 @@
 import { SuiClient } from "@mysten/sui/client";
 import React, { useState } from "react";
 
-import { RPC_ENDPOINTS, RpcLatencyResult, generateRandomAddress, measureRpcLatency } from "@polymedia/suitcase-core";
+import { RpcLatencyResult, generateRandomAddress, measureRpcLatency } from "@polymedia/suitcase-core";
 import { LinkExternal } from "@polymedia/suitcase-react";
+import { RPC_ENDPOINTS as ORIGINAL_RPC_ENDPOINTS } from "@polymedia/suitcase-core";
+
+
+const RPC_ENDPOINTS = {
+    ...ORIGINAL_RPC_ENDPOINTS,
+    mainnet: [
+      ...ORIGINAL_RPC_ENDPOINTS.mainnet,
+      "https://sui.obsuidian.xyz:2020",
+      "https://sui.obsuidian.xyz:443",
+      "https://sui.obsuidian.xyz",  // Add your custom RPC endpoint
+      "http://sui.obsuidian.xyz",
+      "http://sui.obsuidian.xyz:443",
+     "http://sui.obsuidian.xyz:80",
+      "http://45.10.161.136:2220",
+      "http://localhost:2220",
+     "https://sui.obsuidian.xyz:443/json-rpc/"
+    ]
+  };
 
 export const PageHome: React.FC = () =>
     {
